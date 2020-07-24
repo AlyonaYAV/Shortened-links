@@ -1,0 +1,32 @@
+{
+  "name": "shortened-links",
+  "version": "1.0.0",
+  "description": "Mern stack",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlyonaYAV/Shortened-links.git"
+  },
+  "keywords": [
+    "mern",
+    "react"
+  ],
+  "author": "Alyona Yavorska <alyonayavorskaya03@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlyonaYAV/Shortened-links/issues"
+  },
+  "homepage": "https://github.com/AlyonaYAV/Shortened-links#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.25"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4"
+  }
+}
