@@ -1,8 +1,11 @@
 const config = require("config");
 const express = require("express");
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 const app = express();
 const PORT = config.get('port') || 3000;
+
+//Register Auth routers
+app.use('api/auth', require('./routers/auth.routers'));
 
 async function start(){
     try{
