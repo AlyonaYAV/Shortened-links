@@ -1,4 +1,5 @@
 {
     "port": 3000,
+    "jwtSecret":"yav-mern",
     "mongoUri": "mongodb+srv://Alyona:Alyona123@cluster0.qwrdy.azure.mongodb.net/shortened-links?retryWrites=true&w=majority"
 }
