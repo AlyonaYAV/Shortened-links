@@ -6,7 +6,6 @@ function App() {
   const routes = useRoutes(false);
   return (
     <div className="container">
-      <h1>Hello</h1>
       <BrowserRouter>
         { routes }
       </BrowserRouter>

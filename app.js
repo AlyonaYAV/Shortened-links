@@ -4,6 +4,9 @@ const mongoose = require("mongoose");
 const app = express();
 const PORT = config.get('port') || 3000;
 
+//To get correct property 'body' from Request object. 'body' is a stream.
+app.use(express.json({ extended:true }));
+
 //Register Auth routers
 app.use('/api/auth', require('./routers/auth.routers'));
 

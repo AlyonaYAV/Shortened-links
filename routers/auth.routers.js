@@ -17,6 +17,7 @@ const checkPassLogin = ()=>check('password', 'Enter a password').exists();
 //'api/auth/register'
 router.post('/register', [checkEmail(),checkPass()], async (request, response)=>{
     try {
+        console.log("Body", request.body);
         //Validate parameters
         const errors = validationResult(request);
         if(!errors.isEmpty()){
