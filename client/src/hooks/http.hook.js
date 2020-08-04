@@ -22,11 +22,11 @@ export const useHttp = () => {
         }catch(e){
             console.log("Error", e.message);
             setLoading(false);
-            setError(e.massage);
+            setError(e.message);
             //To process an error in Componets
             throw e;
         }
     },[] );
-    const clearError = ()=>setError(null);
+    const clearError = useCallback( ()=>setError(null), []);
     return { loading, request, error, clearError };
 }

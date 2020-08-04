@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHttp } from './../hooks/http.hook';
+import { useMessage } from '../hooks/message.hook';
 
 export const AuthPage = ()=>{
     const { loading, request, error, clearError } = useHttp();
+    const message = useMessage();
     const [form, setForm] = useState({
         email : "",
         password : ""
     });
+    //Display reeor message
+    useEffect( ()=>{
+        message(error);
+        clearError();
+        //console.log("effect ",error );
+    },[error,message, clearError] );
     //Using with Imputs
     const changeHandler = (event)=>{
         setForm({...form, [event.target.name] : event.target.value });
@@ -15,7 +23,7 @@ export const AuthPage = ()=>{
     const registerHandler = async ()=>{
         try{
           const data = await request('/api/auth/register', 'POST', {...form});
-          console.log(data);  
+          message(data.message);  
         }catch(e){
 
         }
