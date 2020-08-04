@@ -5,7 +5,7 @@ const app = express();
 const PORT = config.get('port') || 3000;
 
 //Register Auth routers
-app.use('api/auth', require('./routers/auth.routers'));
+app.use('/api/auth', require('./routers/auth.routers'));
 
 async function start(){
     try{
