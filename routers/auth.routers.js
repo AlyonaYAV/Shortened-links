@@ -68,7 +68,7 @@ router.post('/login',[checkEmailLogin(),checkPassLogin()], async (request, respo
         }
         //if email has been found compare the password
         const isMatch = await bcrypt.compare(password, user.password);
-        if(isMatch){
+        if(!isMatch){
             return response.status(400).json( {
                 message: "Passwords aren`t matched. '400 bad Request'"
             } );
@@ -80,12 +80,12 @@ router.post('/login',[checkEmailLogin(),checkPassLogin()], async (request, respo
             {expiresIn: '1h'}
         );
         //By default status is - 200, we may skip it
-        respons.status(200).json({
+        response.status(200).json({
             token: token,
             userId: user.id
         });
     }catch(e){
-       response.status(500).json({message: "Something went wrong try again!"}); 
+       response.status(500).json({message: "Something went wrong try again!"});
     }
 });
 

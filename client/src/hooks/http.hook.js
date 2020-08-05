@@ -13,14 +13,14 @@ export const useHttp = () => {
                 headers['Content-Type'] = 'application/json';            }
             const response = await window.fetch(url, {method, body, headers});
             const data = await response.json();
-            console.log("Resspons", response);
+            //console.log("Resspons", response);
             if(!response.ok) {
                 throw new Error(data.message || "Something went wrong...");
             }
             setLoading(false);
             return data;
         }catch(e){
-            console.log("Error", e.message);
+            //console.log("Error", e.message);
             setLoading(false);
             setError(e.message);
             //To process an error in Componets
