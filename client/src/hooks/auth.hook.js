@@ -3,6 +3,7 @@ import {useState, useCallback, useEffect} from 'react';
 export const useAuth = ()=>{
     const [token, setToken] = useState(null);
     const [userId, setUserId] = useState(null);
+    const [ready, setRady] = useState(false);
 
     const login = useCallback( (jwtToken, id)=>{
         //Seve to the state
@@ -28,7 +29,9 @@ export const useAuth = ()=>{
         if(data && data.token) {
            login(data.token, data.userId);
         }
+        //Authorizaition is completed
+        setRady(true)
     },[login]);
 
-    return {login, logout, token, userId};
+    return {login, logout, token, userId, ready};
 };
