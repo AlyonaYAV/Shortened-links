@@ -17,9 +17,9 @@ export const LinkCard = ( {link} )=>{
             <p>Amount of clicks:&nbsp;
                 <strong>{link.clicks}</strong>
             </p>
-            <p>Creation date:
+            <p>Creation date:&nbsp;
                 <strong>{ new Date(link.date).toLocaleDateString() }</strong>
             </p>
         </>
-    )
+    );
 };

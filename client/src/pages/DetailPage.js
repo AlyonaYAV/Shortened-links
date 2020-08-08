@@ -10,13 +10,14 @@ export const DetailPage = ()=>{
     const linkId = useParams().id;
     const { request, loading } = useHttp();
     const [link, setLink] = useState(null);
+
     const getLink = useCallback( async ()=>{
         try{
             const fetched = await request(`/api/link/${linkId}`, 'GET', null, {
                 Authorization: `AYAV ${token}`
             });
             setLink(fetched);
-        }catch(error){
+        }catch(e){
 
         }
     }, [token, linkId, request]);
