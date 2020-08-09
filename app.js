@@ -10,6 +10,7 @@ app.use(express.json({ extended:true }));
 //Register Auth routers
 app.use('/api/auth', require('./routers/auth.routers'));
 app.use('/api/link', require('./routers/link.routers'));
+app.use('/t', require('./routers/redirect.routers'));
 
 async function start(){
     try{
